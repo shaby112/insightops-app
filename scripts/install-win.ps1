@@ -18,9 +18,6 @@ Invoke-WebRequest -Uri "https://releases.insightops.dev/latest/.env.example" -Ou
 
 if (-not (Test-Path ".env")) {
     Copy-Item ".env.example" ".env"
-    Write-Host "Please edit $installDir\.env with your keys" -ForegroundColor Yellow
-    notepad .env
-    Read-Host "Press Enter after saving .env"
 }
 
 docker compose pull

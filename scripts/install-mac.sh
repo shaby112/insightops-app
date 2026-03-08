@@ -31,8 +31,6 @@ curl -sL https://releases.insightops.dev/latest/.env.example -o .env.example
 
 if [ ! -f .env ]; then
   cp .env.example .env
-  echo "Please configure your keys in $INSTALL_DIR/.env"
-  ${EDITOR:-nano} .env
 fi
 
 docker compose pull

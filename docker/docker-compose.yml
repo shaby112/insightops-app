@@ -8,17 +8,17 @@ services:
     ports:
       - "${INSIGHTOPS_PORT:-8080}:8080"
     environment:
-      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
-      - CLERK_PUBLISHABLE_KEY=${CLERK_PUBLISHABLE_KEY}
-      - CLERK_ISSUER=${CLERK_ISSUER}
-      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY:-sk_test_elY5ZB4JKBJX2HeSd9LjbxXfNEUaVQJ8MMWkRiYvRk}
+      - CLERK_PUBLISHABLE_KEY=${CLERK_PUBLISHABLE_KEY:-pk_test_Z29yZ2VvdXMtZ29yaWxsYS01OC5jbGVyay5hY2NvdW50cy5kZXYk}
+      - CLERK_ISSUER=${CLERK_ISSUER:-https://gorgeous-gorilla-58.clerk.accounts.dev}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-AIzaSyASaxVYCa1eKF-L4nHQUPsqwiP9yQDxgEc}
       - LLM_MODEL=${LLM_MODEL:-gemini-2.0-flash}
       - AI_PROVIDER=${AI_PROVIDER:-gemini}
       - ALLOW_CLOUD_LLM=${ALLOW_CLOUD_LLM:-true}
       - LOCAL_LLM_BASE_URL=${LOCAL_LLM_BASE_URL:-}
       - LOCAL_LLM_MODEL=${LOCAL_LLM_MODEL:-local-model}
       - LOCAL_LLM_API_KEY=${LOCAL_LLM_API_KEY:-}
-      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-InsightOpsEncryptionKey_2026_Default}
       - DATABASE_URL=postgresql+asyncpg://insightops:${DB_PASSWORD:-insightops}@db:5432/insightops
       - SQLALCHEMY_DATABASE_URI=postgresql://insightops:${DB_PASSWORD:-insightops}@db:5432/insightops
       - DUCKDB_MEMORY_LIMIT=${DUCKDB_MEMORY_LIMIT:-4GB}
