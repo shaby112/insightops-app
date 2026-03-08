@@ -26,6 +26,9 @@ services:
       - ENVIRONMENT=production
       - DEBUG=false
       - CORS_ORIGINS=${CORS_ORIGINS:-}
+      - UVICORN_WORKERS=${UVICORN_WORKERS:-1}
+      - UVICORN_LOG_LEVEL=${UVICORN_LOG_LEVEL:-info}
+      - RUN_MIGRATIONS_ON_START=${RUN_MIGRATIONS_ON_START:-true}
     volumes:
       - insightops-data:/app/data
     depends_on:
