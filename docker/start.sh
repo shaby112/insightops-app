@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Starting InsightOps..."
+echo "Starting Kuantra..."
 
 cd /app/backend
 

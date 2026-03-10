@@ -61,7 +61,7 @@ class MDLGenerator:
         ('/', 'division'),
     ]
 
-    # InsightOps internal tables that must not leak into the business semantic model.
+    # Kuantra internal tables that must not leak into the business semantic model.
     INTERNAL_TABLE_BLOCKLIST = {
         "otps",
         "db_connections",
@@ -360,7 +360,7 @@ class MDLGenerator:
         """
         Query DuckDB to build models with data source tracking.
         Models are schema-qualified (e.g. conn_10.users) to avoid collisions.
-        Internal InsightOps tables and staging schemas are excluded.
+        Internal Kuantra tables and staging schemas are excluded.
         """
         if schemas:
             # Only allow explicit, safe schema identifiers.

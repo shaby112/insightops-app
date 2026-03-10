@@ -115,7 +115,7 @@ class DashboardAgentService:
                 model=self.model,
                 tools=tools,
                 instruction="""
-                You are an expert Dashboard Planning Agent for InsightOps.
+                You are an expert Dashboard Planning Agent for Kuantra.
                 Your goal is to create a structured dashboard plan based on the user's request and database schema.
                 
                 WORKFLOW:

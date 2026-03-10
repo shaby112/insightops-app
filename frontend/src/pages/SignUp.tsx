@@ -257,7 +257,7 @@ export default function SignUp() {
               Your data, <span className="text-gradient-primary">your way</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-md">
-              Join thousands of teams who've transformed their data workflow with InsightOps.
+              Join thousands of teams who've transformed their data workflow with Kuantra.
             </p>
           </div>
 
@@ -287,7 +287,7 @@ export default function SignUp() {
             className="p-6 rounded-2xl bg-card/50 border border-border backdrop-blur-sm"
           >
             <p className="text-foreground italic mb-4">
-              "InsightOps cut our reporting time from hours to minutes. The natural language interface
+              "Kuantra cut our reporting time from hours to minutes. The natural language interface
               means our entire team can access insights, not just analysts."
             </p>
             <div className="flex items-center gap-3">

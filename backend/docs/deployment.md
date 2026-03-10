@@ -1,7 +1,7 @@
 # Enterprise DuckDB Deployment Guide
 
 ## Overview
-InsightOps uses DuckDB as an embedded high-performance analytical engine. This guide covers deployment considerations for maximum performance and stability.
+Kuantra uses DuckDB as an embedded high-performance analytical engine. This guide covers deployment considerations for maximum performance and stability.
 
 ## Infrastructure Requirements
 
@@ -32,7 +32,7 @@ DuckDB operates in-process. Memory management is critical.
 ### AWS ECS / Fargate
 - Use `EFS` for the main database if persistence across task restarts is required, but note simple EFS can be slow for OLAP.
 - **Better**: Use an EBS volume attached to EC2 instance (not Fargate) or use S3 + local cache if read-only.
-- **For InsightOps (Read/Write)**: dedicated EC2 or stateful set on EKS with EBS GP3.
+- **For Kuantra (Read/Write)**: dedicated EC2 or stateful set on EKS with EBS GP3.
 
 ### Kubernetes (Helm/Kustomize)
 ```yaml
@@ -49,7 +49,7 @@ volumeMounts:
 volumes:
   - name: data-volume
     persistentVolumeClaim:
-      claimName: insightops-pvc
+      claimName: kuantra-pvc
   - name: temp-volume
     emptyDir: {}
 ```

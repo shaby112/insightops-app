@@ -23,7 +23,7 @@ def get_sync_engine():
         else:
             # Fallback to SQLite for development
             _sync_engine = create_engine(
-                "sqlite:///./insightops.db",
+                "sqlite:///./kuantra.db",
                 connect_args={"check_same_thread": False}
             )
     return _sync_engine

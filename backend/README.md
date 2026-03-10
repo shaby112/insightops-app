@@ -1,4 +1,4 @@
-# InsightOps Backend
+# Kuantra Backend
 
 ## Setup
 

@@ -24,7 +24,7 @@ if settings.SQLALCHEMY_DATABASE_URI:
     config.set_main_option("sqlalchemy.url", settings.SQLALCHEMY_DATABASE_URI)
 else:
     # Fallback to SQLite
-    config.set_main_option("sqlalchemy.url", "sqlite:///./insightops.db")
+    config.set_main_option("sqlalchemy.url", "sqlite:///./kuantra.db")
 
 # add your model's MetaData object here
 # for 'autogenerate' support

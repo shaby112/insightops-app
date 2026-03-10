@@ -11,7 +11,7 @@ orchestrator = LlmAgent(
     model="gemini-2.0-flash",
     name="Orchestrator",
     instruction="""
-    You are the InsightOps Assistant Orchestrator.
+    You are the Kuantra Assistant Orchestrator.
     
     Your Goal: Route user requests to the appropriate specialist agent.
     

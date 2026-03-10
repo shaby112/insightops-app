@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  insightops:
+  kuantra:
     build:
       context: ..
       dockerfile: docker/Dockerfile
@@ -21,8 +21,8 @@ services:
       - LOCAL_LLM_MODEL=${LOCAL_LLM_MODEL:-local-model}
       - LOCAL_LLM_API_KEY=${LOCAL_LLM_API_KEY:-}
       - ENCRYPTION_KEY=${ENCRYPTION_KEY}
-      - DATABASE_URL=postgresql+asyncpg://insightops:${DB_PASSWORD:-insightops}@db:5432/insightops
-      - SQLALCHEMY_DATABASE_URI=postgresql://insightops:${DB_PASSWORD:-insightops}@db:5432/insightops
+      - DATABASE_URL=postgresql+asyncpg://kuantra:${DB_PASSWORD:-kuantra}@db:5432/kuantra
+      - SQLALCHEMY_DATABASE_URI=postgresql://kuantra:${DB_PASSWORD:-kuantra}@db:5432/kuantra
       - DUCKDB_MEMORY_LIMIT=${DUCKDB_MEMORY_LIMIT:-4GB}
       - DUCKDB_THREADS=${DUCKDB_THREADS:-4}
       - ENVIRONMENT=production
@@ -32,7 +32,7 @@ services:
       - UVICORN_LOG_LEVEL=${UVICORN_LOG_LEVEL:-info}
       - RUN_MIGRATIONS_ON_START=${RUN_MIGRATIONS_ON_START:-true}
     volumes:
-      - insightops-data:/app/data
+      - kuantra-data:/app/data
     depends_on:
       db:
         condition: service_healthy
@@ -46,18 +46,18 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      - POSTGRES_USER=insightops
-      - POSTGRES_PASSWORD=${DB_PASSWORD:-insightops}
-      - POSTGRES_DB=insightops
+      - POSTGRES_USER=kuantra
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-kuantra}
+      - POSTGRES_DB=kuantra
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U insightops"]
+      test: ["CMD-SHELL", "pg_isready -U kuantra"]
       interval: 10s
       timeout: 5s
       retries: 5
     restart: unless-stopped
 
 volumes:
-  insightops-data:
+  kuantra-data:
   postgres-data:

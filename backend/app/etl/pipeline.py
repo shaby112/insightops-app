@@ -35,7 +35,7 @@ class ETLPipeline:
     def __init__(self, connection_id: str, connection_name: str):
         self.connection_id = to_uuid(connection_id)
         self.connection_name = connection_name
-        self.pipeline_name = f"insightops_conn_{self.connection_id.hex}"
+        self.pipeline_name = f"kuantra_conn_{self.connection_id.hex}"
         self.dataset_name = connection_schema_name(self.connection_id)
         
         # Initialize dlt pipeline with DuckDB destination

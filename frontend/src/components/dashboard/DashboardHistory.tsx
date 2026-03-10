@@ -21,7 +21,7 @@ interface DashboardHistoryProps {
   currentDashboard: DashboardConfig;
 }
 
-const STORAGE_KEY = "insightops-saved-dashboards";
+const STORAGE_KEY = "kuantra-saved-dashboards";
 
 export function DashboardHistory({
   open,

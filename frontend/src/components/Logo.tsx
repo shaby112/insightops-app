@@ -21,7 +21,7 @@ const textSizeClasses = {
 };
 
 // Cache the logo image in memory and localStorage for faster loading
-const LOGO_CACHE_KEY = "insightops-logo-cached";
+const LOGO_CACHE_KEY = "kuantra-logo-cached";
 let cachedLogoUrl: string | null = null;
 
 function useCachedLogo() {
@@ -93,7 +93,7 @@ export function Logo({ showText = true, size = "md", className }: LogoProps) {
     <div className={cn("flex items-center gap-2", className)}>
       <img
         src={logoUrl}
-        alt="InsightOps Logo"
+        alt="Kuantra Logo"
         className={cn(
           sizeClasses[size], 
           "w-auto object-contain transition-opacity duration-200",
@@ -104,7 +104,7 @@ export function Logo({ showText = true, size = "md", className }: LogoProps) {
       />
       {showText && (
         <span className={cn("font-bold text-gradient-primary", textSizeClasses[size])}>
-          InsightOps
+          Kuantra
         </span>
       )}
     </div>

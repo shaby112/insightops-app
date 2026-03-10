@@ -34,8 +34,8 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error(f"Failed to shutdown ETL scheduler: {e}")
 
-logger.info("Initializing InsightOps API")
-app = FastAPI(title="InsightOps AI Backend", lifespan=lifespan)
+logger.info("Initializing Kuantra API")
+app = FastAPI(title="Kuantra AI Backend", lifespan=lifespan)
 
 def _build_cors_origins() -> list[str]:
     origins = {

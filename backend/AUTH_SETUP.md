@@ -22,7 +22,7 @@ Create a `.env` file in the root directory with the following variables:
 POSTGRES_SERVER=localhost
 POSTGRES_USER=your_username
 POSTGRES_PASSWORD=your_password
-POSTGRES_DB=insightops
+POSTGRES_DB=kuantra
 POSTGRES_PORT=5432
 
 # JWT Configuration

@@ -112,12 +112,12 @@ export default function Landing() {
           <Link to="/" className="flex items-center gap-3">
             <motion.img
               src={logoImage}
-              alt="InsightOps"
+              alt="Kuantra"
               className="h-9 w-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             />
-            <span className="font-bold text-xl hidden sm:block">InsightOps</span>
+            <span className="font-bold text-xl hidden sm:block">Kuantra</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -210,7 +210,7 @@ export default function Landing() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                InsightOps transforms how teams interact with data. Query databases in natural language.
+                Kuantra transforms how teams interact with data. Query databases in natural language.
                 Edit SQL with AI assistance. All with built-in safety guardrails.
               </motion.p>
 
@@ -274,7 +274,7 @@ export default function Landing() {
                 <div className="relative">
                   <motion.img
                     src={logoImage}
-                    alt="InsightOps AI"
+                    alt="Kuantra AI"
                     className="w-64 md:w-80 lg:w-96 h-auto drop-shadow-2xl"
                     style={{ filter: "drop-shadow(0 0 60px hsl(var(--primary) / 0.4))" }}
                   />
@@ -482,7 +482,7 @@ export default function Landing() {
               <span className="text-gradient-primary">Data Workflow?</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto relative z-10">
-              Join hundreds of data teams who save hours every week with InsightOps.
+              Join hundreds of data teams who save hours every week with Kuantra.
             </p>
 
             <motion.div className="relative z-10" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -502,8 +502,8 @@ export default function Landing() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <img src={logoImage} alt="InsightOps" className="h-8 w-auto" />
-              <span className="font-semibold">InsightOps</span>
+              <img src={logoImage} alt="Kuantra" className="h-8 w-auto" />
+              <span className="font-semibold">Kuantra</span>
             </div>
 
             <nav className="flex items-center gap-8">
@@ -519,7 +519,7 @@ export default function Landing() {
             </nav>
 
             <p className="text-sm text-muted-foreground">
-              © 2024 InsightOps. All rights reserved.
+              © 2024 Kuantra. All rights reserved.
             </p>
           </div>
         </div>

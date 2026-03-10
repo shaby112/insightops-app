@@ -16,7 +16,7 @@ def setup_logging():
     logging.getLogger("uvicorn").setLevel(logging.INFO)
     logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
     
-    logger = logging.getLogger("insightops")
+    logger = logging.getLogger("kuantra")
     logger.info("Logging initialized")
     return logger
 

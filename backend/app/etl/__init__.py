@@ -1,5 +1,5 @@
 """
-ETL Package for InsightOps Data Warehouse.
+ETL Package for Kuantra Data Warehouse.
 
 Uses dlt (Data Load Tool) for production-grade data pipelines
 with automatic schema evolution, state management, and CDC support.

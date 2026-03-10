@@ -1,7 +1,7 @@
 import { useAuth } from "@clerk/clerk-react";
 
 const ENV_API_BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL?.replace(/\/$/, "");
-const LLM_API_KEY_STORAGE_KEY = "insightops_google_api_key";
+const LLM_API_KEY_STORAGE_KEY = "kuantra_google_api_key";
 
 type TokenProvider = (() => Promise<string | null> | string | null) | null;
 

@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx libpq5 curl && rm -rf /var/lib/apt/lists/*
 
 # Security baseline: application user for backend process.
-RUN groupadd -r insightops && useradd -r -g insightops -m insightops
+RUN groupadd -r kuantra && useradd -r -g kuantra -m kuantra
 
 COPY --from=backend-deps /install /usr/local
 
@@ -39,7 +39,7 @@ COPY --from=frontend-build /app/frontend/dist /usr/share/nginx/html
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 
 RUN mkdir -p /app/data /app/data/uploads /app/data/ssh_keys /app/data/duckdb_temp \
-    && chown -R insightops:insightops /app/data /app/backend
+    && chown -R kuantra:kuantra /app/data /app/backend
 
 ENV PYTHONPATH=/app/backend \
     DUCKDB_DATABASE_PATH=/app/data/warehouse.duckdb \

@@ -29,5 +29,5 @@ htmlcov/
 *.log
 uploads/
 data/
-insightops_conn_10.duckdb
+kuantra_conn_10.duckdb
 debug_duckdb_content.py

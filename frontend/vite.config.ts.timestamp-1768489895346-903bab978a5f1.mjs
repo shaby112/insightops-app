@@ -1,9 +1,9 @@
 // vite.config.ts
-import { defineConfig } from "file:///Users/muhammadalishahbaz/Desktop/InsightOps/insightops-v1/node_modules/vite/dist/node/index.js";
-import react from "file:///Users/muhammadalishahbaz/Desktop/InsightOps/insightops-v1/node_modules/@vitejs/plugin-react-swc/index.js";
+import { defineConfig } from "file:///Users/muhammadalishahbaz/Desktop/Kuantra/kuantra-v1/node_modules/vite/dist/node/index.js";
+import react from "file:///Users/muhammadalishahbaz/Desktop/Kuantra/kuantra-v1/node_modules/@vitejs/plugin-react-swc/index.js";
 import path from "path";
-import { componentTagger } from "file:///Users/muhammadalishahbaz/Desktop/InsightOps/insightops-v1/node_modules/lovable-tagger/dist/index.js";
-var __vite_injected_original_dirname = "/Users/muhammadalishahbaz/Desktop/InsightOps/insightops-v1";
+import { componentTagger } from "file:///Users/muhammadalishahbaz/Desktop/Kuantra/kuantra-v1/node_modules/lovable-tagger/dist/index.js";
+var __vite_injected_original_dirname = "/Users/muhammadalishahbaz/Desktop/Kuantra/kuantra-v1";
 var vite_config_default = defineConfig(({ mode }) => ({
   server: {
     host: "::",

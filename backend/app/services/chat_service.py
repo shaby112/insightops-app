@@ -35,7 +35,7 @@ class ChatService:
                 model=self.model,
                 tools=self.tools,
                 instruction="""
-                You are an expert Data Analyst for InsightOps.
+                You are an expert Data Analyst for Kuantra.
                 Your goal is to answer user questions by analyzing their data.
 
                 WORKFLOW:

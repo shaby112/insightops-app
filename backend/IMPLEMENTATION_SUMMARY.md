@@ -66,7 +66,7 @@
 ## 📁 File Structure
 
 ```
-insightops-v1-backend/
+kuantra-v1-backend/
 ├── app/
 │   ├── api/
 │   │   ├── deps.py                    # Dependencies (DB, JWT auth)
@@ -107,7 +107,7 @@ insightops-v1-backend/
 POSTGRES_SERVER=localhost
 POSTGRES_USER=your_username
 POSTGRES_PASSWORD=your_password
-POSTGRES_DB=insightops
+POSTGRES_DB=kuantra
 POSTGRES_PORT=5432
 
 # JWT

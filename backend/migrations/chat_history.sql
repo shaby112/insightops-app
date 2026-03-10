@@ -1,5 +1,5 @@
 -- =====================================================
--- InsightOps Chat History Tables Migration
+-- Kuantra Chat History Tables Migration
 -- Run this SQL in your Supabase SQL Editor
 -- =====================================================
 

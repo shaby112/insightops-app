@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 import time
 
 print("Testing DB connection to port 5432...")
-uri = "postgresql://postgres.erkssxplhqaxpatrcdsx:InsightOpsDev123@aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres"
+uri = "postgresql://postgres.erkssxplhqaxpatrcdsx:KuantraDev123@aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres"
 engine = create_engine(uri, connect_args={"connect_timeout": 5})
 
 try:
@@ -14,7 +14,7 @@ except Exception as e:
     print(f"Connection to 5432 failed: {e}")
 
 print("\nTesting DB connection to port 6543...")
-uri_6543 = "postgresql://postgres.erkssxplhqaxpatrcdsx:InsightOpsDev123@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres"
+uri_6543 = "postgresql://postgres.erkssxplhqaxpatrcdsx:KuantraDev123@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres"
 engine_6543 = create_engine(uri_6543, connect_args={"connect_timeout": 5})
 
 try:

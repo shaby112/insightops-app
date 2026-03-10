@@ -78,12 +78,12 @@ class EmailService:
         Returns:
             True if email sent successfully, False otherwise
         """
-        subject = "InsightOps - Email Verification Code"
+        subject = "Kuantra - Email Verification Code"
         otp_expire_minutes = int(getattr(settings, "OTP_EXPIRE_MINUTES", 10))
         body = f"""
 Hello,
 
-Thank you for signing up for InsightOps!
+Thank you for signing up for Kuantra!
 
 Your email verification code is: {otp_code}
 
@@ -92,7 +92,7 @@ This code will expire in {otp_expire_minutes} minutes.
 If you didn't request this code, please ignore this email.
 
 Best regards,
-InsightOps Team
+Kuantra Team
 """
         return self.send_email(to_email, subject, body)
 

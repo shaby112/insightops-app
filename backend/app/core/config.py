@@ -4,7 +4,7 @@ from pydantic import model_validator
 from typing import Optional, List
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "InsightOps"
+    PROJECT_NAME: str = "Kuantra"
     VERSION: str = "1.0.0"
     API_V1_STR: str = "/api/v1"
     ENVIRONMENT: str = "development" # development, production, test
