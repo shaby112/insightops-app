@@ -23,11 +23,17 @@ def get_db() -> Generator[Session, None, None]:
 
 @lru_cache(maxsize=1)
 def _jwks_client() -> PyJWKClient:
+    if settings.LOGTO_ISSUER or settings.LOGTO_JWKS_URL:
+        if not settings.LOGTO_JWKS_URL:
+            raise RuntimeError("LOGTO_JWKS_URL is not configured.")
+        return PyJWKClient(settings.LOGTO_JWKS_URL, cache_keys=True)
+    
     if not settings.CLERK_JWKS_URL:
         raise RuntimeError(
-            "CLERK_JWKS_URL is not configured. Set CLERK_ISSUER or CLERK_JWKS_URL."
+            "CLERK_JWKS_URL or LOGTO_JWKS_URL must be configured."
         )
     return PyJWKClient(settings.CLERK_JWKS_URL, cache_keys=True)
+
 
 
 def _extract_bearer_token(request: Request) -> str:
@@ -49,12 +55,21 @@ async def get_current_user(
 
     try:
         signing_key = _jwks_client().get_signing_key_from_jwt(token)
+        options = {"verify_aud": False}
+        issuer = settings.CLERK_ISSUER or None
+        
+        if settings.LOGTO_ISSUER:
+            issuer = settings.LOGTO_ISSUER
+            if settings.LOGTO_AUDIENCE:
+                options = {"verify_aud": True, "verify_signature": True}
+        
         payload = jwt.decode(
             token,
             signing_key.key,
-            algorithms=["RS256"],
-            options={"verify_aud": False},
-            issuer=settings.CLERK_ISSUER or None,
+            algorithms=["RS256", "ES384"], # Logto might use ES384 or RS256
+            options=options,
+            issuer=issuer,
+            audience=settings.LOGTO_AUDIENCE if settings.LOGTO_AUDIENCE else None
         )
     except Exception as exc:
         raise HTTPException(

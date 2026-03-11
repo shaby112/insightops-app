@@ -39,3 +39,4 @@ alembic
 # Enhanced MDL Generation
 rapidfuzz
 pyarrow
+prql-python

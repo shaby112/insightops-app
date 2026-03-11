@@ -31,6 +31,12 @@ class Settings(BaseSettings):
     CLERK_WEBHOOK_SECRET: str = ""
     CLERK_ISSUER: str = ""
     CLERK_JWKS_URL: str = ""
+    
+    # Auth (Logto - Self-Hosted SSO)
+    LOGTO_ISSUER: str = ""
+    LOGTO_JWKS_URL: str = ""
+    LOGTO_AUDIENCE: str = ""
+
     ENCRYPTION_KEY: str = ""
     
     # SMTP Settings
@@ -144,6 +150,10 @@ class Settings(BaseSettings):
 
         if self.CLERK_ISSUER and not self.CLERK_JWKS_URL:
             self.CLERK_JWKS_URL = f"{self.CLERK_ISSUER.rstrip('/')}/.well-known/jwks.json"
+        
+        if self.LOGTO_ISSUER and not self.LOGTO_JWKS_URL:
+            self.LOGTO_JWKS_URL = f"{self.LOGTO_ISSUER.rstrip('/')}/oidc/jwks"
+
 
         # Use an explicit encryption key for secrets-at-rest (DB passwords, SSH creds).
         if not self.ENCRYPTION_KEY:

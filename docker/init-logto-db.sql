@@ -1,0 +1,5 @@
+CREATE USER logto WITH PASSWORD 'logto';
+CREATE DATABASE logto;
+GRANT ALL PRIVILEGES ON DATABASE logto TO logto;
+\c logto
+GRANT ALL ON SCHEMA public TO logto;
