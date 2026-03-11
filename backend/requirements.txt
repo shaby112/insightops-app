@@ -38,3 +38,4 @@ alembic
 
 # Enhanced MDL Generation
 rapidfuzz
+pyarrow
